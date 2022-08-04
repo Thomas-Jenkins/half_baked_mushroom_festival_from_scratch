@@ -33,3 +33,9 @@ footer {
     justify-content: flex-end;
     background-color: var(--footer-background);
 }
+/* my code after */
+.box {
+    height: 150px;
+    width: 150px;
+    border: 1px solid black;
+}
