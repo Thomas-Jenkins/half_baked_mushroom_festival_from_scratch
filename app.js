@@ -46,6 +46,13 @@ forrest.addEventListener('click', () => {
 friendButton.addEventListener('click', () => {
     const name = friendInput.value;
     const variable = Math.floor(Math.random() * friends.length);
+    // attempting to remove duplicates
+    for (let i = 0; i < friends.length; i++){
+        if (friends[i] === variable) {
+            friends.splice(i, variable);
+        }
+    }
+    // end attempt to remove duplicates
     const newestFriend = {
         name: name || randomName[variable],
         satisfaction: 1

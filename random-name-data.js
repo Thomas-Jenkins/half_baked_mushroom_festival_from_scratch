@@ -18,5 +18,7 @@ export const randomName = [
     'Zackery Victor',
     'Karl Cotton',
     'Brendon Frost',
-    'Eleanor Shanahan'
+    'Eleanor Shanahan',
+    'John Wayne Gacy',
+    'Theodore Bundy'
 ];
