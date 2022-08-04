@@ -21,6 +21,10 @@ header {
 }
 
 main {
+/* my code */
+    display: grid;
+    grid-template-rows: 10% 90%;
+/* end my code */
     padding: 20px;
 }
 
@@ -34,8 +38,19 @@ footer {
     background-color: var(--footer-background);
 }
 /* my code after */
+#game-board{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
 .box {
     height: 150px;
     width: 150px;
     border: 1px solid black;
+    margin: 5px;
+}
+.forrest {
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+
 }

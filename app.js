@@ -1,8 +1,13 @@
 // import functions and grab DOM elements
 import { renderFriends } from './render-friends.js';
 import { renderMushrooms } from './render-friends.js';
+import { addFriend } from './render-friends.js';
+import { findFriend } from './render-friends.js';
 const friendsBox = document.querySelector('#friends-box');
 const mushroomTable = document.querySelector('#mushroom-table');
+const forrest = document.querySelector('#forrest');
+const friendInput = document.querySelector('[name="friend-name"]');
+const friendButton = document.querySelector('add-friend-button');
 // let state
 let friends = [
     {
@@ -20,16 +25,33 @@ let friends = [
 ];
 let gatheredMushrooms = 4;
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
-const friendsObj = {
-    name: '',
-    satisfaction: 1,
-};
 
 
+displayFriend();
+displayMushroom();
+
+
+
+forrest.addEventListener('click', () => {
+    const randomNum = Math.random() * 10;
+    if (randomNum >= 5) {
+        gatheredMushrooms++;
+        alert('You found a mushroom');
+    } else {
+        alert('You find nothing');
+    }
+    displayMushroom();
+});  
+friendButton.addEventListener('click', () => {
+    const name = friendInput.value;
+    const newestFriend = {
+        name: name || `Friend #${Math.floor(Math.random() * 100)}`,
+        satisfaction: 1
+    };
+    friends.push(newestFriend);
+    friendInput.value = '';
+    displayFriend();
+});
 
 function displayFriend() {
     friendsBox.textContent = '';
@@ -38,8 +60,24 @@ function displayFriend() {
         const friendsEl = renderFriends(friend);
         
         friendsBox.append(friendsEl);
-        
+        friendsEl.addEventListener('click', () => {
+            const presentFriends = findFriend(friend.name, friends);
+            if (gatheredMushrooms <= 0){
+                alert('GASP!, There are no more mushrooms');
+            } else {
+                if (presentFriends.satisfaction <= 2){
+                    presentFriends.satisfaction++;
+                    gatheredMushrooms--;
+                } else if (presentFriends.satisfaction >= 3){
+                    alert('They cant eat any more!');
+                }
+            }
+            displayMushroom();
+            displayFriend();
+            console.log(gatheredMushrooms);
+        });
     }
+    
 }
 function displayMushroom() {
     mushroomTable.textContent = '';
@@ -50,6 +88,7 @@ function displayMushroom() {
 }
 
 
-displayFriend();
-displayMushroom();
+
+
+
 
