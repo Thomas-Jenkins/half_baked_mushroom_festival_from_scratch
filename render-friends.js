@@ -1,7 +1,7 @@
 export function renderMushrooms() {
     const mushroomEl = document.createElement('div');
     mushroomEl.textContent = '🍄';
-    mushroomEl.classList.add('box');
+    mushroomEl.classList.add('mushrooms');
     return mushroomEl;
 }
 
@@ -11,7 +11,9 @@ export function renderFriends(friend) {
     const friendEl = document.createElement('div');
     const friendElName = document.createElement('h2');
     const friendElSatisfaction = document.createElement('p');
-  
+    
+    friendElSatisfaction.classList.add('friend');
+
     friendElName.textContent = friend.name;
 
     if (friend.satisfaction === 1){

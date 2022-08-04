@@ -3,6 +3,7 @@ import { renderFriends } from './render-friends.js';
 import { renderMushrooms } from './render-friends.js';
 // import { addFriend } from './render-friends.js';
 import { findFriend } from './render-friends.js';
+import { randomName } from './random-name-data.js';
 const friendsBox = document.querySelector('#friends-box');
 const mushroomTable = document.querySelector('#mushroom-table');
 const forrest = document.querySelector('#forrest');
@@ -44,8 +45,9 @@ forrest.addEventListener('click', () => {
 });  
 friendButton.addEventListener('click', () => {
     const name = friendInput.value;
+    const variable = Math.floor(Math.random() * friends.length);
     const newestFriend = {
-        name: name || `Friend #${Math.floor(Math.random() * 100)}`,
+        name: name || randomName[variable],
         satisfaction: 1
     };
     friends.push(newestFriend);
@@ -70,7 +72,7 @@ function displayFriend() {
                     presentFriends.satisfaction++;
                     gatheredMushrooms--;
                 } else if (presentFriends.satisfaction >= 3){
-                    alert('They cant eat any more!');
+                    alert(`${friend.name} can't eat any more!`);
                 }
             }
             displayMushroom();

@@ -43,14 +43,38 @@ footer {
     grid-template-columns: 1fr 1fr 1fr;
 }
 .box {
+    display: grid;
     height: 150px;
     width: 150px;
     border: 1px solid black;
     margin: 5px;
+    background-color: bisque;
+    justify-items: center;
+}
+.box h2 {
+    margin: 0;
 }
 .forrest {
     height: 100%;
     width: 100%;
     border: 1px solid black;
+
+}
+#mushroom-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: max-content;
+    justify-items: center;
+}
+.mushrooms {
+    font-size: 3rem;
+    align-content: center;
+    width: 75px;
+    height: 75px;
+    margin: 1px;
+    
+}
+.friend {
+    font-size: 2.5rem;
 
 }
