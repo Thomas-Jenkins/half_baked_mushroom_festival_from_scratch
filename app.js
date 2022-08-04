@@ -1,7 +1,7 @@
 // import functions and grab DOM elements
 import { renderFriends } from './render-friends.js';
 import { renderMushrooms } from './render-friends.js';
-import { addFriend } from './render-friends.js';
+// import { addFriend } from './render-friends.js';
 import { findFriend } from './render-friends.js';
 const friendsBox = document.querySelector('#friends-box');
 const mushroomTable = document.querySelector('#mushroom-table');
