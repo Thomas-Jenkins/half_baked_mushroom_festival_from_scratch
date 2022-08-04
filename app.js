@@ -2,6 +2,7 @@
 import { renderFriends } from './render-friends.js';
 import { renderMushrooms } from './render-friends.js';
 const friendsBox = document.querySelector('#friends-box');
+const mushroomTable = document.querySelector('#mushroom-table');
 // let state
 let friends = [
     {
@@ -17,6 +18,7 @@ let friends = [
         satisfaction: 1
     }
 ];
+let gatheredMushrooms = 4;
 
 // set event listeners 
   // get user input
@@ -39,5 +41,15 @@ function displayFriend() {
         
     }
 }
+function displayMushroom() {
+    mushroomTable.textContent = '';
+    for (let i = 0; i < gatheredMushrooms; i++) {
+        const mushroomCount = renderMushrooms();
+        mushroomTable.append(mushroomCount);
+    }
+}
+
+
 displayFriend();
+displayMushroom();
 
