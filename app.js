@@ -45,13 +45,19 @@ forrest.addEventListener('click', () => {
 });  
 friendButton.addEventListener('click', () => {
     const name = friendInput.value;
-    const variable = Math.floor(Math.random() * friends.length);
     // attempting to remove duplicates
-    for (let i = 0; i < friends.length; i++){
-        if (friends[i] === variable) {
-            friends.splice(i, variable);
-        }
-    }
+    // const tempArr = [];
+    // end attempt to remove duplicates
+    const variable = Math.floor(Math.random() * randomName.length);
+    // // attempting to remove duplicates
+    // tempArr.push(variable);
+    // console.log(tempArr);
+    // for (let i = 0; i < randomName.length; i++){
+    //     if (randomName[i] === variable) {
+    //         randomName.splice(i, variable);
+    //     }
+        
+    // }
     // end attempt to remove duplicates
     const newestFriend = {
         name: name || randomName[variable],
@@ -59,7 +65,6 @@ friendButton.addEventListener('click', () => {
     };
     friends.push(newestFriend);
     friendInput.value = '';
-    console.log(friends);
     displayFriend();
 });
 
