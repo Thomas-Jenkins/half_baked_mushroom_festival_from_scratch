@@ -7,7 +7,7 @@ const friendsBox = document.querySelector('#friends-box');
 const mushroomTable = document.querySelector('#mushroom-table');
 const forrest = document.querySelector('#forrest');
 const friendInput = document.querySelector('[name="friend-name"]');
-const friendButton = document.querySelector('add-friend-button');
+const friendButton = document.querySelector('#add-friend-button');
 // let state
 let friends = [
     {
@@ -50,6 +50,7 @@ friendButton.addEventListener('click', () => {
     };
     friends.push(newestFriend);
     friendInput.value = '';
+    console.log(friends);
     displayFriend();
 });
 
